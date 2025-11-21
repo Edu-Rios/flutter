@@ -8,6 +8,7 @@ import 'package:trabflutter/Widgets/form/MyForm.dart';
 import 'package:trabflutter/Widgets/form/MyRadio.dart';
 import 'package:trabflutter/Widgets/form/MySwitch.dart';
 import 'package:trabflutter/Widgets/form/MyTextField.dart';
+import 'package:trabflutter/Widgets/form/MyproyectForm.dart';
 import 'package:trabflutter/Widgets/form/ShowDatePicker.dart';
 import 'package:trabflutter/model/Sound.dart';
 import 'package:trabflutter/Widgets/form/CheckBox.dart';
@@ -31,7 +32,7 @@ class PlaylistPageState extends State<PlaylistPage> {
         child: Icon(Icons.add),
       ),
       body: SafeArea(
-        child: MyForm(),
+        child: MyRadio(),
         /* Center(
           child: ElevatedButton(
             child: Text('Playlist Page'),

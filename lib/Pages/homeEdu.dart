@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:trabflutter/Pages/loginPage.dart';
 import 'package:trabflutter/Pages/practica/practicaAppBar.dart';
 import 'package:trabflutter/Pages/practica/practicaimage.dart';
+import 'package:trabflutter/Widgets/Menu/Fragmets/MyHome.dart';
+import 'package:trabflutter/Widgets/Menu/Fragmets/MyProfile.dart';
+import 'package:trabflutter/Widgets/Menu/Fragmets/MySettings.dart';
+import 'package:trabflutter/Widgets/Menu/MyBottomNavegatorBar.dart';
+import 'package:trabflutter/Widgets/Menu/MyDrawer.dart';
 import 'package:trabflutter/Widgets/MyAppBar.dart';
 import 'package:trabflutter/Widgets/MyButtons.dart';
 import 'package:trabflutter/Widgets/MyFloatingActionButton.dart';
@@ -23,6 +28,8 @@ class HomeEdu extends StatefulWidget {
 }
 
 class HomeEduState extends State<HomeEdu> {
+  List fragments = [MyHome(), MyProfile(), MySettings()];
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     final args =
@@ -31,7 +38,10 @@ class HomeEduState extends State<HomeEdu> {
       backgroundColor: Colors.blueGrey,
       floatingActionButton: MyFloatingActionButton(),
       appBar: PracticaMyAppBar(args),
-      body: SafeArea(
+      drawer: Mydrawer(),
+      bottomNavigationBar: MyBottomNavegationBar(onTap, currentIndex),
+      body: fragments[currentIndex],
+      /* SafeArea(
         child: PracticaMyimage(),
         /*
         child: Center(
@@ -47,7 +57,28 @@ class HomeEduState extends State<HomeEdu> {
             ],
           ),
         ),*/
-      ),
+      ),*/
+    );
+  }
+
+  onTap(int index) {
+    setState(() {
+      this.currentIndex = index;
+    });
+  }
+
+  bottonSheet() {
+    showBottomSheet(
+      context: context,
+      builder: (builder) {
+        return Column(
+          children: [
+            ListTile(leading: Icon(Icons.share), title: Text("Compartir")),
+            ListTile(leading: Icon(Icons.link), title: Text("Copiar link")),
+            ListTile(leading: Icon(Icons.send), title: Text("Enviar")),
+          ],
+        );
+      },
     );
   }
 }

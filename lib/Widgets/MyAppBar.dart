@@ -9,7 +9,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 30,
       shadowColor: Colors.white,
       centerTitle: true,
-      leading: Icon(Icons.arrow_back, color: Colors.white),
+      // leading: Icon(Icons.arrow_back, color: Colors.white),
       actions: [
         Icon(Icons.search, color: Colors.white),
         Icon(Icons.more_vert, color: Colors.white),

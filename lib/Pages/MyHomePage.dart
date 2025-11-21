@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trabflutter/Pages/loginPage.dart';
 import 'package:trabflutter/Pages/practica/practicaAppBar.dart';
 import 'package:trabflutter/Pages/practica/practicaimage.dart';
+import 'package:trabflutter/Widgets/Menu/MyDrawer.dart';
 import 'package:trabflutter/Widgets/MyAppBar.dart';
 import 'package:trabflutter/Widgets/MyButtons.dart';
 import 'package:trabflutter/Widgets/MyFloatingActionButton.dart';
@@ -26,6 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       //appBar: PracticaMyAppBar(),
+      drawer: Mydrawer(),
       body: SafeArea(
         child: Loginpage(),
         /*
